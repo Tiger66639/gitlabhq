@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Gitlabhq by Tiger66639</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Gitlabhq</h1>
+        <h2>GitLab is version control for your server</h2>
+        <a href="https://github.com/Tiger66639/gitlabhq" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="gitlab" class="anchor" href="#gitlab" aria-hidden="true"><span class="octicon octicon-link"></span></a>GitLab</h1>
+
+<p><a href="https://travis-ci.org/Tiger66639/gitlabhq"><img src="https://travis-ci.org/Tiger66639/gitlabhq.svg" alt="Build Status"></a></p>
+
+<h2>
+<a id="canonical-source" class="anchor" href="#canonical-source" aria-hidden="true"><span class="octicon octicon-link"></span></a>Canonical source</h2>
+
+<p>The source of GitLab Community Edition is <a href="https://gitlab.com/gitlab-org/gitlab-ce/">hosted on GitLab.com</a> and there are mirrors to make <a href="CONTRIBUTING.md">contributing</a> as easy as possible.</p>
+
+<h2>
+<a id="open-source-software-to-collaborate-on-code" class="anchor" href="#open-source-software-to-collaborate-on-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>Open source software to collaborate on code</h2>
+
+<p>To see how GitLab looks please see the <a href="https://about.gitlab.com/features/">features page on our website</a>.</p>
+
+<ul>
+<li>Manage Git repositories with fine grained access controls that keep your code secure</li>
+<li>Perform code reviews and enhance collaboration with merge requests</li>
+<li>Each project can also have an issue tracker and a wiki</li>
+<li>Used by more than 100,000 organizations, GitLab is the most popular solution to manage Git repositories on-premises</li>
+<li>Completely free and open source (MIT Expat license)</li>
+<li>Powered by <a href="https://github.com/rails/rails">Ruby on Rails</a>
+</li>
+</ul>
+
+<h2>
+<a id="editions" class="anchor" href="#editions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Editions</h2>
+
+<p>There are two editions of GitLab:</p>
+
+<ul>
+<li>GitLab Community Edition (CE) is available freely under the MIT Expat license.</li>
+<li>GitLab Enterprise Edition (EE) includes <a href="https://about.gitlab.com/features/#compare">extra features</a> that are more useful for organizations with more than 100 users. To use EE and get official support please <a href="https://about.gitlab.com/pricing/">become a subscriber</a>.</li>
+</ul>
+
+<p>Included with the GitLab Omnibus Packages is <a href="https://about.gitlab.com/gitlab-ci/">GitLab CI</a> that can easily build, test and deploy code.</p>
+
+<h2>
+<a id="website" class="anchor" href="#website" aria-hidden="true"><span class="octicon octicon-link"></span></a>Website</h2>
+
+<p>On <a href="https://about.gitlab.com/">about.gitlab.com</a> you can find more information about:</p>
+
+<ul>
+<li><a href="https://about.gitlab.com/subscription/">Subscriptions</a></li>
+<li><a href="https://about.gitlab.com/consultancy/">Consultancy</a></li>
+<li><a href="https://about.gitlab.com/community/">Community</a></li>
+<li>
+<a href="https://about.gitlab.com/gitlab-com/">Hosted GitLab.com</a> use GitLab as a free service</li>
+<li>
+<a href="https://about.gitlab.com/gitlab-ee/">GitLab Enterprise Edition</a> with additional features aimed at larger organizations.</li>
+<li>
+<a href="https://about.gitlab.com/gitlab-ci/">GitLab CI</a> a continuous integration (CI) server that is easy to integrate with GitLab.</li>
+</ul>
+
+<h2>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h2>
+
+<p>Please see the <a href="doc/install/requirements.md">requirements documentation</a> for system requirements and more information about the supported operating systems.</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>The recommended way to install GitLab is with the <a href="https://about.gitlab.com/downloads/">Omnibus packages</a> on our package server.
+Compared to an installation from source, this is faster and less error prone.
+Just select your operating system, download the respective package (Debian or RPM) and install it using the system's package manager.</p>
+
+<p>There are various other options to install GitLab, please refer to the <a href="https://about.gitlab.com/installation/">installation page on the GitLab website</a> for more information.</p>
+
+<p>You can access a new installation with the login <strong><code>root</code></strong> and password <strong><code>5iveL!fe</code></strong>, after login you are required to set a unique password.</p>
+
+<h2>
+<a id="install-a-development-environment" class="anchor" href="#install-a-development-environment" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install a development environment</h2>
+
+<p>To work on GitLab itself, we recommend setting up your development environment with <a href="https://gitlab.com/gitlab-org/gitlab-development-kit">the GitLab Development Kit</a>.
+If you do not use the GitLab Development Kit you need to install and setup all the dependencies yourself, this is a lot of work and error prone.
+One small thing you also have to do when installing it yourself is to copy the example development unicorn configuration file:</p>
+
+<pre><code>cp config/unicorn.rb.example.development config/unicorn.rb
+</code></pre>
+
+<p>Instructions on how to start GitLab and how to run the tests can be found in the <a href="https://gitlab.com/gitlab-org/gitlab-development-kit#development">development section of the GitLab Development Kit</a>.</p>
+
+<h2>
+<a id="software-stack" class="anchor" href="#software-stack" aria-hidden="true"><span class="octicon octicon-link"></span></a>Software stack</h2>
+
+<p>GitLab is a Ruby on Rails application that runs on the following software:</p>
+
+<ul>
+<li>Ubuntu/Debian/CentOS/RHEL</li>
+<li>Ruby (MRI) 2.1</li>
+<li>Git 1.7.10+</li>
+<li>Redis 2.4+</li>
+<li>MySQL or PostgreSQL</li>
+</ul>
+
+<p>For more information please see the <a href="http://doc.gitlab.com/ce/development/architecture.html">architecture documentation</a>.</p>
+
+<h2>
+<a id="third-party-applications" class="anchor" href="#third-party-applications" aria-hidden="true"><span class="octicon octicon-link"></span></a>Third-party applications</h2>
+
+<p>There are a lot of <a href="https://about.gitlab.com/applications/">third-party applications integrating with GitLab</a>. These include GUI Git clients, mobile applications and API wrappers for various languages.</p>
+
+<h2>
+<a id="gitlab-release-cycle" class="anchor" href="#gitlab-release-cycle" aria-hidden="true"><span class="octicon octicon-link"></span></a>GitLab release cycle</h2>
+
+<p>Since 2011 a minor or major version of GitLab is released on the 22nd of every month. Patch and security releases are published when needed. New features are detailed on the <a href="https://about.gitlab.com/blog/">blog</a> and in the <a href="CHANGELOG">changelog</a>. For more information about the release process see the <a href="https://gitlab.com/gitlab-org/gitlab-ce/tree/master/doc/release">release documentation</a>. Features that will likely be in the next releases can be found on the <a href="http://feedback.gitlab.com/forums/176466-general">feature request forum</a> with the status <a href="http://feedback.gitlab.com/forums/176466-general/status/796456">started</a> and <a href="http://feedback.gitlab.com/forums/176466-general/status/796457">completed</a>.</p>
+
+<h2>
+<a id="upgrading" class="anchor" href="#upgrading" aria-hidden="true"><span class="octicon octicon-link"></span></a>Upgrading</h2>
+
+<p>For upgrading information please see our <a href="https://about.gitlab.com/update/">update page</a>.</p>
+
+<h2>
+<a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Documentation</h2>
+
+<p>All documentation can be found on <a href="http://doc.gitlab.com/ce/">doc.gitlab.com/ce/</a>.</p>
+
+<h2>
+<a id="getting-help" class="anchor" href="#getting-help" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting help</h2>
+
+<p>Please see <a href="https://about.gitlab.com/getting-help/">Getting help for GitLab</a> on our website for the many options to get help.</p>
+
+<h2>
+<a id="is-it-any-good" class="anchor" href="#is-it-any-good" aria-hidden="true"><span class="octicon octicon-link"></span></a>Is it any good?</h2>
+
+<p><a href="https://news.ycombinator.com/item?id=3067434">Yes</a></p>
+
+<h2>
+<a id="is-it-awesome" class="anchor" href="#is-it-awesome" aria-hidden="true"><span class="octicon octicon-link"></span></a>Is it awesome?</h2>
+
+<p>Thanks for <a href="https://twitter.com/supersloth/status/489462789384056832">asking this question</a> Joshua.
+<a href="https://twitter.com/gitlab/favorites">These people</a> seem to like it.</p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/Tiger66639/gitlabhq/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/Tiger66639/gitlabhq/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/Tiger66639/gitlabhq"></a> is maintained by <a href="https://github.com/Tiger66639">Tiger66639</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
