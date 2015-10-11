@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="7830e997-a760-4efd-a928-a4f9125d3424" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Build</name>
+  <description />
+  <settings>
+    <options>
+      <option name="showDependenciesChanges" value="true" />
+    </options>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_101" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="sh bin/pkgr_before_precompile.sh" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_102" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="sh scripts/prepare_build.sh" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_116" name="" type="rake-runner">
+        <parameters>
+          <param name="build-file-path" value="Rakefile" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="ui.rakeRunner.bunlder.exec.enabled" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="Gitlabhq_HttpsGithubComTiger66639gitlabhqGitRefsHeadsMaster" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers>
+      <build-trigger id="vcsTrigger" type="vcsTrigger">
+        <parameters>
+          <param name="groupCheckinsByCommitter" value="true" />
+          <param name="perCheckinTriggering" value="true" />
+          <param name="quietPeriodMode" value="USE_DEFAULT" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
+    <build-extensions>
+      <extension id="BUILD_EXT_26" type="VcsLabeling">
+        <parameters>
+          <param name="labelingPattern" value="build-%system.build.number%" />
+          <param name="vcsRootId" value="Gitlabhq_HttpsGithubComTiger66639gitlabhqGitRefsHeadsMaster" />
+        </parameters>
+      </extension>
+    </build-extensions>
+    <cleanup />
+  </settings>
+</build-type>
+
