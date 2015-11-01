@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/Tiger66639/gitlabhq.svg)](https://travis-ci.org/Tiger66639/gitlabhq)
 
+
 ## Canonical source
 
 The source of GitLab Community Edition is [hosted on GitLab.com](https://gitlab.com/gitlab-org/gitlab-ce/) and there are mirrors to make [contributing](CONTRIBUTING.md) as easy as possible.
